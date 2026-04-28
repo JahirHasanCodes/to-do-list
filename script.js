@@ -1,4 +1,5 @@
 const inputBox = document.getElementById("input-box");
+const addBtn = document.querySelector(".row button");
 const listContainer = document.getElementById("list-container");
 
 function addTask() {
@@ -34,3 +35,10 @@ function showTask(){
   listContainer.innerHTML = localStorage.getItem("data")
 }
 showTask();
+
+// Add task when user presses Enter in the input
+      inputBox.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+          addBtn.click();
+        }
+      });
